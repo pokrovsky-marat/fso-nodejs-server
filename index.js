@@ -5,7 +5,6 @@
 // app.use(express.static('dist'))
 // где dist название билда реакта
 const express = require("express");
-const cors = require("cors");
 const app = express();
 
 let notes = [
@@ -26,7 +25,6 @@ let notes = [
   },
 ];
 app.use(express.static("dist"));
-app.use(cors());
 app.use(express.json());
 
 const generateId = () => {
