@@ -1,3 +1,9 @@
+//Задеплоил готовый сервис по адресу
+// https://fso-nodejs-server.onrender.com/api/notes/
+
+// чтобы прикрутить реакт приложение к бекэнду используем команду
+// app.use(express.static('dist'))
+// где dist название билда реакта
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -19,6 +25,7 @@ let notes = [
     important: true,
   },
 ];
+app.use(express.static("dist"));
 app.use(cors());
 app.use(express.json());
 
@@ -77,7 +84,7 @@ app.put("/api/notes/:id", (request, response) => {
   response.status(200);
   response.json(body);
 });
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
