@@ -1,9 +1,19 @@
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username": "savant",
+    "name": "marat",
+    "password": "fP8aaasxh6Z_@"
+}
+###
 POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-  "content": "lol",
-  "important": true
+  "content": "Новая запись с полем userId где указан айди нужного пользователя",
+  "important": true,
+  "userId":"68b5d032a87f78c0572748e0"
 }
 ###
 GET http://localhost:3001/api/notes/
